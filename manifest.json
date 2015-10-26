@@ -12,7 +12,22 @@
 		"default_popup" : "popup.html",
 		"default_icon" : "icons/icon16.png"
 	},
+	"background" : {
+		"scripts":["background.js"],
+		"persistent" : false    /*항상 움직이는 게 아니라 이벤트 발생시점에만 */
+	},
+	"content_scripts": [
+		{
+			"matches":[
+				"https://*/*",
+				"http://*/*"
+			],
+			"js":["content-script.js"]
+		}
+	],
 	"permissions" : [
-		"tabs"
+		"tabs",
+		"https://*/*",
+		"http://*/*"
 	]
 }
