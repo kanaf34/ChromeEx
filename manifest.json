@@ -19,13 +19,14 @@
 	"content_scripts": [
 		{
 			"matches":[
-				"https://*/*",
-				"http://*/*"
+				"https://www.amazon.co.jp/*",
+				"http://www.amazon.co.jp/*"
 			],
 			"js":["content-script.js"]
 		}
 	],
 	"permissions" : [
+		"desktopCapture",
 		"tabs",
 		"https://*/*",
 		"http://*/*"
