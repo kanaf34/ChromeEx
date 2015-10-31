@@ -3,6 +3,11 @@ $(function() {
 	chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
 	  chrome.tabs.sendMessage(tabs[0].id, {type : 'onActivated'}, function(response) {
 	    
+	  	if (!response) {
+	  		alert("No book data, Please check page loading.")
+	  		this.close();
+	  	}
+
 		$('#rsltObj').val(response);
 		
 		$('#owner').val(response.owner);

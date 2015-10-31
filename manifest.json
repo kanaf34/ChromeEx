@@ -1,8 +1,8 @@
 {
-	"name" : "Link Maker_my",
-	"version" : "0.0.3",
+	"name" : "BookShelf",
+	"version" : "0.0.5",
 	"manifest_version" : 2,
-	"description": "This is an example to web pages Link Marker",
+	"description": "This is bookshelf for test",
 	"icons" : {
 		"16" : "icons/icon16.png",
 		"48" : "icons/icon48.png",
@@ -12,10 +12,10 @@
 		"default_popup" : "popup.html",
 		"default_icon" : "icons/icon16.png"
 	},
-	"background" : {
-		"scripts":["background.js"],
-		"persistent" : false    /*항상 움직이는 게 아니라 이벤트 발생시점에만 */
-	},
+	// "background" : {
+	// 	"scripts":["background.js"],
+	// 	"persistent" : false    /*항상 움직이는 게 아니라 이벤트 발생시점에만 */
+	// },
 	"content_scripts": [
 		{
 			"matches":[
@@ -26,7 +26,6 @@
 		}
 	],
 	"permissions" : [
-		"desktopCapture",
 		"tabs",
 		"https://*/*",
 		"http://*/*"
