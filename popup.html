@@ -6,8 +6,18 @@
 		<link rel="stylesheet" href="css/popup.css" type="text/css">
 	</head>
 	<body>
-		title : <p id="title"></p>
-		url : <p id="url"></p>
+		<p>
+		owner  : <input type="text" id="owner" />  <br/>
+		title  : <input type="text" id="title"/> <br/>
+		author : <input type="text" id="author" /> <br/>
+		price  : <input type="text" id="price" />  <br/>
+		</p>
+		img : <img id="image" />
+		<p>
+		원서/정발여부  : <input type="radio" id="originY" value="Y">원서 <input type="radio" id="originN" value="N">정발<br/>
+		전자책여부 : <input type="radio" id="kindleY" value="Y">전자책 <input type="radio" id="kindleN" value="N">일반<br/>
+		</p>
+		<input type="hidden" id="rsltObj" />
 
 		<script src="js/bower_components/jquery-2.1.4.min/index.js"></script>
 		<script src="js/popup.js"></script>

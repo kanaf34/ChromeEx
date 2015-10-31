@@ -9,8 +9,7 @@ body {
 
 img {
     margin: 5px;
-    border: 2px solid black;
     vertical-align: middle;
-    width: 75px;
-    height: 75px;
+    width: 150px;
+    height: 250px;
 }
