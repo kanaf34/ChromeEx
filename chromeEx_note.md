@@ -10,7 +10,7 @@
 - GCM(Google Cloud Messaging)とChrome extensionでデスクトップへプッシュする仕組みを作る 
   http://qiita.com/khirose/items/cc76e8aa47283f8b181b
 - Chrome Extension: browserAction.onClicked.addListener() not being called
- http://stackoverflow.com/questions/12706649/chrome-extension-browseraction-onclicked-addlistener-not-being-called
+  http://stackoverflow.com/questions/12706649/chrome-extension-browseraction-onclicked-addlistener-not-being-called
 
 ### 구글 스프레드 시트 DB 화
 - 구글 스프레드시트를 데이터베이스로 이용하기 - 1. ajax POST를 통한 기록 편
