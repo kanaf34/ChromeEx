@@ -22,12 +22,25 @@
 				"https://www.amazon.co.jp/*",
 				"http://www.amazon.co.jp/*"
 			],
-			"js":["content-script.js"]
+			"js":[
+				// jquery 를 아래와 같이 넣음으로써 content-script 에서도 사용 가능
+				"js/app/content-script.js",
+				"js/lib/jquery-2.1.4.min.js"
+			]
 		}
 	],
 	"permissions" : [
 		"tabs",
 		"https://*/*",
-		"http://*/*"
-	]
+		"http://*/*",
+		"identity" 		// internet 사이트에 대한 permission
+	],
+	"content_security_policy": "script-src 'self' https://apis.google.com; object-src 'self'",
+	"oauth2": {
+    	"client_id": "602327710223-7g6m5cot6arlr39sdosa599o02pff81u.apps.googleusercontent.com",
+    	"scopes": [
+			  "https://www.googleapis.com/auth/script.storage" 
+			, "https://www.googleapis.com/auth/spreadsheets"
+    	]
+  	}
 }

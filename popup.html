@@ -14,12 +14,15 @@
 		</p>
 		img : <img id="image" />
 		<p>
-		원서/정발여부  : <input type="radio" id="originY" value="Y">원서 <input type="radio" id="originN" value="N">정발<br/>
-		전자책여부 : <input type="radio" id="kindleY" value="Y">전자책 <input type="radio" id="kindleN" value="N">일반<br/>
+		원서/정발여부  : <input type="radio" name="isOrigin" value="Y">원서 <input type="radio" name="isOrigin" value="N">정발<br/>
+		전자책여부 : <input type="radio" name="isEbook" value="Y">전자책 <input type="radio" name="isEbook" value="N">일반<br/>
 		</p>
 		<input type="hidden" id="rsltObj" />
 
-		<script src="js/bower_components/jquery-2.1.4.min/index.js"></script>
-		<script src="js/popup.js"></script>
+		<div id="btnSender">저장</div>
+
+		<script src="js/lib/jquery-2.1.4.min.js"></script>
+		<script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
+		<script src="js/app/popup.js"></script>
 	</body>
 </html>
