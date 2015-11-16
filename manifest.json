@@ -33,14 +33,7 @@
 		"tabs",
 		"https://*/*",
 		"http://*/*",
-		"identity" 		// internet 사이트에 대한 permission
+		"storage" // 데이터 저장가능?
 	],
-	"content_security_policy": "script-src 'self' https://apis.google.com; object-src 'self'",
-	"oauth2": {
-    	"client_id": "602327710223-7g6m5cot6arlr39sdosa599o02pff81u.apps.googleusercontent.com",
-    	"scopes": [
-			  "https://www.googleapis.com/auth/script.storage" 
-			, "https://www.googleapis.com/auth/spreadsheets"
-    	]
-  	}
+	"content_security_policy": "script-src 'self' https://apis.google.com; object-src 'self'"
 }
