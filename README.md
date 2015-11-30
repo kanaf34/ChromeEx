@@ -1,2 +1,0 @@
-# ChromeEx
-Chrome Extensions Test

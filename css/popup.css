@@ -1,0 +1,18 @@
+body {
+  width: 350px;
+  /*font-family: "Noto Sans JP", "Jeju Gothic", "Helvetica", "Arial", sans-serif;*/
+}
+
+img {
+  width: 70%;
+  margin-left: 25px
+}
+
+paper-input.short {
+  width: 100px;
+}
+
+
+paper-button.custom {
+  margin-top: 20px;
+}

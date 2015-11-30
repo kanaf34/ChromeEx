@@ -1,27 +1,35 @@
 {
-	"name" : "Example 1: Embeded Scripts to All Web Pages",
-	"version" : "0.0.1",
+	"name" : "BookShelfPolymer",
+	"version" : "0.0.5",
 	"manifest_version" : 2,
-	"description": "This is an example to embeded scripts to all web pages",
+	"description": "This is bookshelf for test with Polymer",
 	"icons" : {
-		"16" : "icons/icon16.png",
-		"48" : "icons/icon48.png",
-		"128": "icons/icon128.png"
+		"16" : "assets/image/icon16.png",
+		"48" : "assets/image/icon48.png",
+		"128": "assets/image/icon128.png"
 	},
-	"content_scripts" : [
-	{
-		"matches" : [
-			"<all_urls>"
-		],
-		"js" : [
-			"content-script.js"
-		]
-	}
-	],
-	"web_accessible_resources" : [
-		"embeded-script.js"
+	"browser_action": {
+		"default_popup" : "build.html",
+		"default_icon" : "assets/image/icon16.png"
+	},
+	"content_scripts": [
+		{
+			"matches":[
+				"https://www.amazon.co.jp/*",
+				"http://www.amazon.co.jp/*",
+				"http://ridibooks.com/"
+			],
+			"js":[
+				"js/app/content-script.js",
+				// jquery 를 아래와 같이 넣음으로써 content-script 에서도 사용 가능
+				"components/jquery/dist/jquery.min.js"
+			]
+		}
 	],
 	"permissions" : [
-		"<all_urls>"
-	]
+		"tabs",
+		"https://*/*",
+		"http://*/*"
+	],
+	"content_security_policy": "script-src 'self' https://apis.google.com; object-src 'self'"
 }

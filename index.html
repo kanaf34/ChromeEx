@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bookshelf with Polymer</title>
+     <script src="components/webcomponentsjs/webcomponents.js"></script>
+      
+    <!-- 1. Import jquery, js, googl api(csp) -->
+    <script src="components/jquery/dist/jquery.min.js"></script>
+    <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script> 
+    <script src="js/app/popup.js"></script>
+
+    <!-- 2. Use an HTML Import to bring in some elements. -->
+    <link rel="import" href="components/paper-input/paper-input.html">
+    <link rel="import" href="components/paper-radio-group/paper-radio-group.html">
+    <link rel="import" href="components/paper-item/paper-item.html">
+    <link rel="import" href="components/paper-listbox/paper-listbox.html">
+    <link rel="import" href="components/paper-dropdown-menu/paper-dropdown-menu.html">
+    <link rel="import" href="components/paper-button/paper-button.html">
+
+    <!-- 3. Get some fonts -->
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/jejugothic.css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/earlyaccess/notosansjp.css">
+  </head>
+  <body>
+    <img id="image" />
+    <input type="hidden" id="rsltObj" />
+    <paper-input id="title"  label="Title"></paper-input>
+    <paper-input id="author" label="Author"></paper-input>
+    <paper-input id="price"  label="Price" class="short" auto-validate 
+                 pattern="[0-9]*" error-message="Input is not a number!">
+      <div prefix>JPY </div>
+    </paper-input>
+    <paper-radio-group id="bookLanguage">
+      <paper-radio-button name="jp">원서</paper-radio-button>
+      <paper-radio-button name="kr">정발</paper-radio-button>
+    </paper-radio-group>
+    <br/>
+    <paper-radio-group id="publishType">
+      <paper-radio-button name="ebook">전자책</paper-radio-button>
+      <paper-radio-button name="paper">종이책</paper-radio-button>
+    </paper-radio-group>
+    <br/>
+
+    <paper-dropdown-menu label="Purchase Site"  id="purchaseSite">
+      <paper-listbox class="dropdown-content">
+<!--         <template is="dom-repeat" items="[[siteArr]]" as="site">
+          <paper-item>[[site]]</paper-item>
+        </template> -->
+        <paper-item>Amazon Japan</paper-item>
+        <paper-item>Amazon Japan(kindle)</paper-item>
+        <paper-item>Alandin</paper-item>
+        <paper-item>Ridibooks</paper-item>
+      </paper-listbox>
+    </paper-dropdown-menu>
+
+    <paper-input class="short" label="volume" type="number">
+      <div suffix>권</div>
+    </paper-input>
+
+    <paper-button id="btnSender" class="custom" raised>Save</paper-button>
+  </body>
+</html>

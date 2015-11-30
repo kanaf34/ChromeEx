@@ -1,0 +1,24 @@
+{
+  "name": "chromeex_polymer",
+  "version": "1.0.0",
+  "description": "Chrome Extension for bookself with Polymer",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kanaf34/chromeEx.git"
+  },
+  "author": "kanaf34",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kanaf34/chromeEx/issues"
+  },
+  "homepage": "https://github.com/kanaf34/chromeEx#readme",
+  "devDependencies": {
+    "grunt-vulcanize": "~0.4.0",
+    "grunt": "~0.4.5",
+    "grunt-contrib-watch": "~0.6.1"
+  }
+}
