@@ -25,11 +25,9 @@ $(function() {
 	  });
 	});
 
+	$('#btnSender').click(function() {
+		alert('구글시트에 저장합니다.');
 
-	function checkAuthorization(token) {
-
-		// Use the token.
-		debugger;
 		var saveData = {};
 		saveData['도서명'] = $('#title').val();
 		saveData['작가명'] = $('#author').val();
@@ -44,51 +42,12 @@ $(function() {
 		saveData['구입처'] = purchaseSite.selectedItemLabel;
 		saveData['권수'] = $('#volume').val();
 		saveData['dataMngType'] = 'insert';
-
-    	// gas - 프로젝트속성 - 프로젝트키
-		var scriptId = "M_cX6owyMGCTPR01mkLVJmsR47BC2nz7y";
-		var request = {};
-		request['function']   = "handleResponse";
-		request['parameters'] = [saveData];
-		request['devMode']    = true;
-
-		// gapi.auth.setToken(token);
-
-		var op = gapi.client.request({
-		    'root': 'https://script.googleapis.com',
-		    'path': 'v1/scripts/' + scriptId + ':run',
-		    'method': 'POST',
-		    'body': request
-		})
-
-		op.execute(function(resp) {
-			debugger;
-			alert(resp);
-		})
-	}
-
-	
-	$('#btnSender').click(function() {
-		alert('구글시트에 저장합니다.');
-
+		
 		$.ajax({
 			url : 'https://script.google.com/macros/s/AKfycbxTbj0C1UIWPSzCKG3S6NLs0DYe5gAdk_cZDiCxGKq4yhuUOgk/exec',
 			data : saveData,
 			type : 'POST'
 		});
-
-		// var CLIENT_ID = '602327710223-7g6m5cot6arlr39sdosa599o02pff81u.apps.googleusercontent.com'
-		// var SCOPES = [
-		// 	  'https://www.googleapis.com/auth/script.storage' 
-		// 	, 'https://www.googleapis.com/auth/spreadsheets'
-		// ];
-
-		// gapi.auth.authorize({
-	 //        'client_id': CLIENT_ID,
-	 //        'scope': SCOPES.join(' '),
-	 //        'immediate': true
-	 //    }, checkAuthorization);
-
 	});
 
 
