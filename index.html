@@ -7,8 +7,7 @@
       
     <!-- 1. Import jquery, js, googl api(csp) -->
     <script src="components/jquery/dist/jquery.min.js"></script>
-    <script src="https://apis.google.com/js/client.js?onload=checkAuth"></script> 
-    <script src="js/app/popup.js"></script>
+    <script src="js/popup/popup.js"></script>
 
     <!-- 2. Use an HTML Import to bring in some elements. -->
     <link rel="import" href="components/paper-input/paper-input.html">
@@ -30,32 +29,31 @@
     <paper-input id="author" label="Author"></paper-input>
     <paper-input id="price"  label="Price" class="short" auto-validate 
                  pattern="[0-9]*" error-message="Input is not a number!">
-      <div prefix>JPY </div>
     </paper-input>
     <paper-radio-group id="bookLanguage">
-      <paper-radio-button name="jp">원서</paper-radio-button>
-      <paper-radio-button name="kr">정발</paper-radio-button>
+      <paper-radio-button name="JP">일판</paper-radio-button>
+      <paper-radio-button name="KR">한글판</paper-radio-button>
     </paper-radio-group>
     <br/>
     <paper-radio-group id="publishType">
-      <paper-radio-button name="ebook">전자책</paper-radio-button>
       <paper-radio-button name="paper">종이책</paper-radio-button>
+      <paper-radio-button name="ebook">전자책</paper-radio-button>
     </paper-radio-group>
     <br/>
 
     <paper-dropdown-menu label="Purchase Site"  id="purchaseSite">
       <paper-listbox class="dropdown-content">
-<!--         <template is="dom-repeat" items="[[siteArr]]" as="site">
+<!--         <template is="dom-repeat" items="[[bookProp.purchaseSites]]" as="site">
           <paper-item>[[site]]</paper-item>
         </template> -->
         <paper-item>Amazon Japan</paper-item>
         <paper-item>Amazon Japan(kindle)</paper-item>
-        <paper-item>Alandin</paper-item>
-        <paper-item>Ridibooks</paper-item>
+        <paper-item>리디북스</paper-item>
+        <paper-item>알라딘</paper-item>
       </paper-listbox>
     </paper-dropdown-menu>
 
-    <paper-input class="short" label="volume" type="number">
+    <paper-input class="short" id="volume" label="volume" type="number">
       <div suffix>권</div>
     </paper-input>
 

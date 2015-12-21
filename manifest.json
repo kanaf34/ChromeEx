@@ -17,12 +17,14 @@
 			"matches":[
 				"https://www.amazon.co.jp/*",
 				"http://www.amazon.co.jp/*",
-				"http://ridibooks.com/"
+				"http://ridibooks.com/*"
 			],
 			"js":[
-				"js/app/content-script.js",
 				// jquery 를 아래와 같이 넣음으로써 content-script 에서도 사용 가능
-				"components/jquery/dist/jquery.min.js"
+				"components/jquery/dist/jquery.min.js",
+				"js/app/bookProp.js",
+				"js/app/bookParser.js",
+				"js/app/content-script.js"
 			]
 		}
 	],
@@ -31,5 +33,5 @@
 		"https://*/*",
 		"http://*/*"
 	],
-	"content_security_policy": "script-src 'self' https://apis.google.com; object-src 'self'"
+	"content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
